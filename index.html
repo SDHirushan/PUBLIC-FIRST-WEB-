@@ -1,323 +1,147 @@
 <!DOCTYPE html>
-<html lang="si">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SDJ Doom | Advanced IT Solutions</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
-    
-    <style>
-        /* මූලික සැකසුම් සහ Smooth Scrolling */
-        :root {
-            --primary-color: #00ffcc;
-            --bg-color: #050505;
-            --text-color: #ffffff;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            overflow-x: hidden;
-        }
-
-        /* 3D Canvas Background */
-        #bg-canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: -1;
-        }
-
-        /* Navigation Bar (Glassmorphism) */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 20px 50px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(10px);
-            z-index: 100;
-            transition: 0.3s;
-        }
-
-        nav .logo {
-            font-size: 28px;
-            font-weight: 800;
-            color: var(--primary-color);
-            text-shadow: 0 0 10px rgba(0, 255, 204, 0.5);
-            cursor: pointer;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-        }
-
-        nav ul li a {
-            color: var(--text-color);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 16px;
-            transition: color 0.3s ease;
-        }
-
-        nav ul li a:hover {
-            color: var(--primary-color);
-        }
-
-        /* අංශ සැකසුම් (Sections) */
-        section {
-            min-height: 100vh;
-            padding: 100px 10%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        /* Hero Section */
-        #home {
-            align-items: flex-start;
-        }
-
-        #home h1 {
-            font-size: 5rem;
-            line-height: 1.1;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-        }
-
-        #home h1 span {
-            color: var(--primary-color);
-        }
-
-        #home p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin-bottom: 30px;
-            color: #cccccc;
-        }
-
-        .btn {
-            padding: 15px 30px;
-            background: transparent;
-            border: 2px solid var(--primary-color);
-            color: var(--primary-color);
-            font-size: 18px;
-            font-weight: 600;
-            border-radius: 30px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            box-shadow: 0 0 15px rgba(0, 255, 204, 0.2);
-        }
-
-        .btn:hover {
-            background: var(--primary-color);
-            color: #000;
-            box-shadow: 0 0 30px rgba(0, 255, 204, 0.6);
-            transform: translateY(-3px);
-        }
-
-        /* Services Section (Cards) */
-        #services {
-            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-        }
-
-        .section-title {
-            font-size: 3rem;
-            margin-bottom: 50px;
-            text-align: center;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .service-card {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 40px;
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: transform 0.4s ease, border-color 0.4s ease;
-            cursor: pointer;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--primary-color);
-            background: rgba(255, 255, 255, 0.08);
-        }
-
-        .service-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: var(--primary-color);
-        }
-
-        /* Contact Section */
-        #contact {
-            text-align: center;
-            align-items: center;
-        }
-
-        /* Scroll Animation Classes */
-        .hidden {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 1s ease;
-        }
-
-        .show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-    </style>
+    <title>Salon Sajee | Artistry in Every Strand.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/101/101438.png">
 </head>
 <body>
 
-    <canvas id="bg-canvas"></canvas>
+    <header>
+        <a href="index.html" class="logo">Salon Sajee</a>
+        <nav>
+            <a href="index.html" class="active">Home</a>
+            <a href="services.html">Services</a>
+            <a href="about.html">About</a>
+            <a href="#">Gallery</a>
+            <a href="#">Pricing</a>
+            <a href="#">Testimonials</a>
+        </nav>
+        <a href="services.html" class="header-btn">Book Now</a>
+    </header>
 
-    <nav>
-        <div class="logo">SDJ DOOM</div>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-
-    <section id="home" class="hidden">
-        <h1>Welcome to <br><span>SDJ Doom</span></h1>
-        <p>ඔබගේ ව්‍යාපාරයට අවශ්‍ය නවීන තාක්ෂණික විසඳුම් (Software, Web Design, Animations) එකම තැනකින්. අපි අනාගතය අදම නිර්මාණය කරමු.</p>
-        <a href="#services" class="btn">Explore More</a>
+    <section class="hero-home" style="background-image: url('https://images.unsplash.com/photo-1600948836101-f9ffda59d250?q=80&w=1920&auto=format&fit=crop'); background-size: cover; background-position: center; color: #fff; position: relative;">
+        <div class="container hero-content" style="z-index: 2; position: relative;" >
+            <h4>Colombo's Premier Atelier</h4>
+            <h1  >Artistry in <br>Every Strand.</h1>
+            <p>Experience the pinnacle of hair couture and artistic beauty. At Salon Sajee, we craft art style to refine your unique identity.</p>
+            <div style="margin-top: 30px; display: flex; gap: 20px;">
+                <a href="services.html" class="btn-primary" style="background-color: var(--color-gold);">Explore Services</a>
+                <a href="about.html" class="btn-secondary" style="border-color: #fff; color: #fff;">Our Story</a>
+            </div>
+        </div>
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1;"></div>
     </section>
 
-    <section id="services">
-        <h2 class="section-title hidden">Our Super Services</h2>
-        <div class="services-grid">
-            <div class="service-card hidden">
-                <h3>Web Development</h3>
-                <p>High-performance, interactive, and responsive websites tailored to your business needs.</p>
+    <section class="container sanctuary-section" style="display: flex; align-items: center; gap: 80px;">
+        <div class="section-image" style="flex: 1; position: relative;">
+            <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?q=80&w=500&auto=format&fit=crop" alt="Curly Hair Styling" style="width: 100%; border-radius: 8px;">
+            <div class="excellence-badge" style="position: absolute; bottom: -20px; left: -20px; background: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); font-family: var(--font-heading); text-align: center;">
+                <h3 style="margin-bottom: 0;">15+</h3>
+                <span style="font-size: 14px; font-weight: 300;">Years of<br>Excellence</span>
             </div>
-            <div class="service-card hidden">
-                <h3>3D & Animations</h3>
-                <p>Engaging 3D visuals and smooth web animations to keep your users hooked.</p>
-            </div>
-            <div class="service-card hidden">
-                <h3>Custom Software</h3>
-                <p>Scalable and secure software solutions designed specifically for SDJ Doom's clients.</p>
-            </div>
+        </div>
+        <div class="section-text" style="flex: 1.2;">
+            <h2>A sanctuary of <br><span class="serif-font" style="font-style: italic;">sophistication</span> in the heart <br>of the city.</h2>
+            <p>What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+            <p style="border-top: 1px solid var(--color-border-subtle); padding-top: 20px;">Sajee Jiyagunarardane, Founder</p>
         </div>
     </section>
 
-    <section id="contact" class="hidden">
-        <h2 class="section-title">Ready to Start?</h2>
-        <p style="margin-bottom: 30px; font-size: 1.2rem; color: #ccc;">අප හා සම්බන්ධ වී ඔබගේ මීළඟ Project එක සාර්ථක කරගන්න.</p>
-        <a href="mailto:info@sdjdoom.com" class="btn">Contact SDJ Doom</a>
+    <section class="container signature-section">
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 40px;">
+            <h2 style="margin-bottom: 0;">Our Expertise <br>Signature Treatments</h2>
+            <a href="services.html" class="serif-font" style="color: var(--color-gold); text-transform: uppercase;">View Full Menu →</a>
+        </div>
+        <div class="treatments-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px;">
+            <div class="service-card large-card" style="position: relative; border: none; padding: 0;">
+                <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?q=80&w=600&auto=format&fit=crop" alt="Hair Coloring" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 20px; background: linear-gradient(transparent, rgba(0,0,0,0.8)); border-radius: 0 0 12px 12px; color: #fff;">
+                    <h3>Couture Coloring</h3>
+                    <p style="color: #eee;">LKR 12,500+</p>
+                </div>
+            </div>
+             <div class="service-card large-card" style="position: relative; border: none; padding: 0;">
+               <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=600&auto=format&fit=crop" alt="Ayurvedic Ritual" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+               <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 20px; background: linear-gradient(transparent, rgba(0,0,0,0.8)); border-radius: 0 0 12px 12px; color: #fff;">
+                   <h3>Ayurvedic Ritual</h3>
+                   <p style="color: #eee;">LKR 8,500+</p>
+               </div>
+           </div>
+           <div class="service-card" style="display: grid; grid-template-columns: 1fr 2fr; gap: 20px;">
+               <img src="https://images.unsplash.com/photo-1599305090598-fe179d501227?q=80&w=150&auto=format&fit=crop" alt="Haircut" style="width: 100%; border-radius: 8px;">
+               <div style="display: flex; flex-direction: column; justify-content: center;">
+                    <h3>Precision Cut</h3>
+                    <p>LKR 4,500+</p>
+               </div>
+           </div>
+           <div class="service-card" style="display: grid; grid-template-columns: 1fr 2fr; gap: 20px;">
+               <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=150&auto=format&fit=crop" alt="Bridal Look" style="width: 100%; border-radius: 8px;">
+               <div style="display: flex; flex-direction: column; justify-content: center;">
+                    <h3>Bridal Look</h3>
+                    <p>LKR 45,000+</p>
+               </div>
+           </div>
+        </div>
     </section>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <section class="container testimonial-section" style="background-color: #fff; padding: 100px 0; text-align: center;">
+        <span style="font-size: 3rem; color: var(--color-gold);">“</span>
+        <blockquote class="serif-font" style="font-size: 2rem; color: var(--color-primary-dark); font-style: italic; max-width: 800px; margin: 0 auto; line-height: 1.4;">"The most transformative experience I’ve had in Colombo. Sajee understands hair textures like no one else. My color is radiant and the atmosphere is pure luxury."</blockquote>
+        <div style="display: flex; flex-direction: column; align-items: center; margin-top: 30px;">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=60&auto=format&fit=crop" alt="Client Image" style="border-radius: 50%; width: 60px; height: 60px; object-fit: cover;">
+            <p style="font-weight: 600; margin-top: 10px;">AMALIE PERERA</p>
+        </div>
+    </section>
 
-    <script>
-        // ----------------------------------------------------
-        // 1. 3D Background Animation with Three.js
-        // ----------------------------------------------------
-        const canvas = document.querySelector('#bg-canvas');
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
+    <section class="container map-section" style="display: flex; align-items: center; gap: 80px;">
+        <div style="flex: 1;">
+            <h2>Visit Our Atelier</h2>
+            <h4>Located in the heart of Colombo, our studio is an easy escape from the hustle and bustle.</h4>
+            <ul style="list-style: none; margin-top: 30px;">
+                <li><strong>ADDRESS:</strong> Colombo 03, Sri Lanka</li>
+                <li><strong>Hours:</strong> Tue - Sat: 10:00 AM - 7:00 PM</li>
+                <li><strong>Hotline:</strong> LKR 011 2 546 718</li>
+            </ul>
+            <div style="margin-top: 30px;">
+                <a href="#" class="btn-primary">Get Directions</a>
+            </div>
+        </div>
+        <div style="flex: 1.2;">
+            <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=600&auto=format&fit=crop" alt="Salon Map" style="width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+        </div>
+    </section>
 
-        renderer.setPixelRatio(window.devicePixelRatio);
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        camera.position.z = 30;
+    <footer>
+        <div class="footer-sections">
+            <div class="logo-section">
+                <div class="footer-logo">Salon Sajee</div>
+                <p>Curating beauty and excellence in Colombo.</p>
+            </div>
+            <div class="explore">
+                <h4>Explore</h4>
+                <ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li></ul>
+            </div>
+            <div class="info">
+                <h4>Information</h4>
+                <ul><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms</a></li><li><a href="#">Careers</a></li></ul>
+            </div>
+            <div class="newsletter">
+                <h4>Newsletter</h4>
+                <p>Join our community for the latest style updates and exclusive offers.</p>
+                <div style="display: flex; margin-top: 15px;">
+                    <input type="email" placeholder="Email Address" style="padding: 10px; border-radius: 4px; border: none; flex: 1; margin-right: 10px;">
+                    <button class="header-btn">→</button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Salon Sajee Reserves. Colombo, Sri Lanka.</p>
+        </div>
+    </footer>
 
-        // අංශු (Particles) නිර්මාණය කිරීම
-        const particlesGeometry = new THREE.BufferGeometry();
-        const particlesCount = 1500; // අංශු ගණන
-        const posArray = new Float32Array(particlesCount * 3);
-
-        for(let i = 0; i < particlesCount * 3; i++) {
-            posArray[i] = (Math.random() - 0.5) * 100;
-        }
-
-        particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
-        
-        const material = new THREE.PointsMaterial({
-            size: 0.2,
-            color: 0x00ffcc,
-            transparent: true,
-            opacity: 0.8,
-            blending: THREE.AdditiveBlending
-        });
-
-        const particlesMesh = new THREE.Points(particlesGeometry, material);
-        scene.add(particlesMesh);
-
-        // මූසිකය (Mouse) චලනය වන විට 3D effect එක වෙනස් කිරීම
-        let mouseX = 0;
-        let mouseY = 0;
-        document.addEventListener('mousemove', (event) => {
-            mouseX = event.clientX;
-            mouseY = event.clientY;
-        });
-
-        function animate() {
-            requestAnimationFrame(animate);
-            // අංශු කරකැවීම
-            particlesMesh.rotation.y += 0.001;
-            particlesMesh.rotation.x += 0.0005;
-
-            // Mouse එකට අනුව චලනය
-            particlesMesh.rotation.y += mouseX * 0.00002;
-            particlesMesh.rotation.x += mouseY * 0.00002;
-
-            renderer.render(scene, camera);
-        }
-        animate();
-
-        // Screen එක resize වෙනකොට 3D canvas එකත් හැඩගැස්වීම
-        window.addEventListener('resize', () => {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
-        });
-
-        // ----------------------------------------------------
-        // 2. Smooth Scroll Animations (Intersection Observer)
-        // ----------------------------------------------------
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('show');
-                }
-            });
-        }, { threshold: 0.2 }); // 20% ක් screen එකට ආවම animation එක පෙන්වයි
-
-        const hiddenElements = document.querySelectorAll('.hidden');
-        hiddenElements.forEach((el) => observer.observe(el));
-
-    </script>
 </body>
 </html>
