@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SDJ Doom | Advanced IT Solutions</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* මූලික සැකසුම් සහ Smooth Scrolling */
+        :root {
+            --primary-color: #00ffcc;
+            --bg-color: #050505;
+            --text-color: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            overflow-x: hidden;
+        }
+
+        /* 3D Canvas Background */
+        #bg-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+        }
+
+        /* Navigation Bar (Glassmorphism) */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            transition: 0.3s;
+        }
+
+        nav .logo {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--primary-color);
+            text-shadow: 0 0 10px rgba(0, 255, 204, 0.5);
+            cursor: pointer;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        /* අංශ සැකසුම් (Sections) */
+        section {
+            min-height: 100vh;
+            padding: 100px 10%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* Hero Section */
+        #home {
+            align-items: flex-start;
+        }
+
+        #home h1 {
+            font-size: 5rem;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        #home h1 span {
+            color: var(--primary-color);
+        }
+
+        #home p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 30px;
+            color: #cccccc;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 0 15px rgba(0, 255, 204, 0.2);
+        }
+
+        .btn:hover {
+            background: var(--primary-color);
+            color: #000;
+            box-shadow: 0 0 30px rgba(0, 255, 204, 0.6);
+            transform: translateY(-3px);
+        }
+
+        /* Services Section (Cards) */
+        #services {
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+        }
+
+        .section-title {
+            font-size: 3rem;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.4s ease, border-color 0.4s ease;
+            cursor: pointer;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-color);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        /* Contact Section */
+        #contact {
+            text-align: center;
+            align-items: center;
+        }
+
+        /* Scroll Animation Classes */
+        .hidden {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease;
+        }
+
+        .show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+    </style>
+</head>
+<body>
+
+    <canvas id="bg-canvas"></canvas>
+
+    <nav>
+        <div class="logo">SDJ DOOM</div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="hidden">
+        <h1>Welcome to <br><span>SDJ Doom</span></h1>
+        <p>ඔබගේ ව්‍යාපාරයට අවශ්‍ය නවීන තාක්ෂණික විසඳුම් (Software, Web Design, Animations) එකම තැනකින්. අපි අනාගතය අදම නිර්මාණය කරමු.</p>
+        <a href="#services" class="btn">Explore More</a>
+    </section>
+
+    <section id="services">
+        <h2 class="section-title hidden">Our Super Services</h2>
+        <div class="services-grid">
+            <div class="service-card hidden">
+                <h3>Web Development</h3>
+                <p>High-performance, interactive, and responsive websites tailored to your business needs.</p>
+            </div>
+            <div class="service-card hidden">
+                <h3>3D & Animations</h3>
+                <p>Engaging 3D visuals and smooth web animations to keep your users hooked.</p>
+            </div>
+            <div class="service-card hidden">
+                <h3>Custom Software</h3>
+                <p>Scalable and secure software solutions designed specifically for SDJ Doom's clients.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="hidden">
+        <h2 class="section-title">Ready to Start?</h2>
+        <p style="margin-bottom: 30px; font-size: 1.2rem; color: #ccc;">අප හා සම්බන්ධ වී ඔබගේ මීළඟ Project එක සාර්ථක කරගන්න.</p>
+        <a href="mailto:info@sdjdoom.com" class="btn">Contact SDJ Doom</a>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <script>
+        // ----------------------------------------------------
+        // 1. 3D Background Animation with Three.js
+        // ----------------------------------------------------
+        const canvas = document.querySelector('#bg-canvas');
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
+
+        renderer.setPixelRatio(window.devicePixelRatio);
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        camera.position.z = 30;
+
+        // අංශු (Particles) නිර්මාණය කිරීම
+        const particlesGeometry = new THREE.BufferGeometry();
+        const particlesCount = 1500; // අංශු ගණන
+        const posArray = new Float32Array(particlesCount * 3);
+
+        for(let i = 0; i < particlesCount * 3; i++) {
+            posArray[i] = (Math.random() - 0.5) * 100;
+        }
+
+        particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+        
+        const material = new THREE.PointsMaterial({
+            size: 0.2,
+            color: 0x00ffcc,
+            transparent: true,
+            opacity: 0.8,
+            blending: THREE.AdditiveBlending
+        });
+
+        const particlesMesh = new THREE.Points(particlesGeometry, material);
+        scene.add(particlesMesh);
+
+        // මූසිකය (Mouse) චලනය වන විට 3D effect එක වෙනස් කිරීම
+        let mouseX = 0;
+        let mouseY = 0;
+        document.addEventListener('mousemove', (event) => {
+            mouseX = event.clientX;
+            mouseY = event.clientY;
+        });
+
+        function animate() {
+            requestAnimationFrame(animate);
+            // අංශු කරකැවීම
+            particlesMesh.rotation.y += 0.001;
+            particlesMesh.rotation.x += 0.0005;
+
+            // Mouse එකට අනුව චලනය
+            particlesMesh.rotation.y += mouseX * 0.00002;
+            particlesMesh.rotation.x += mouseY * 0.00002;
+
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        // Screen එක resize වෙනකොට 3D canvas එකත් හැඩගැස්වීම
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        // ----------------------------------------------------
+        // 2. Smooth Scroll Animations (Intersection Observer)
+        // ----------------------------------------------------
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        }, { threshold: 0.2 }); // 20% ක් screen එකට ආවම animation එක පෙන්වයි
+
+        const hiddenElements = document.querySelectorAll('.hidden');
+        hiddenElements.forEach((el) => observer.observe(el));
+
+    </script>
+</body>
+</html>
