@@ -168,3 +168,73 @@ footer {
     text-align: center;
     color: #aaa;
 }
+
+
+
+/* ==========================================
+   MOBILE RESPONSIVE STYLES 
+   ========================================== */
+
+@media (max-width: 768px) {
+    /* Container එකේ size එක වැඩි කිරීම */
+    .container {
+        width: 92%;
+        padding: 40px 0;
+    }
+
+    /* Heading අකුරු කුඩා කිරීම */
+    h1 { font-size: 2.8rem; }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.5rem; }
+
+    /* Navigation එක සැකසීම */
+    header {
+        padding: 15px 5%;
+        flex-direction: column; /* එක යට එක එන්න */
+        gap: 15px;
+        text-align: center;
+    }
+
+    nav {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    /* Footer එක තනි තීරුවකට (Single Column) හැරවීම */
+    .footer-sections {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 30px;
+    }
+
+    /* Buttons ලස්සනට මැදට ගැනීම */
+    .btn-primary, .btn-secondary {
+        width: 100%; /* Full width buttons */
+        padding: 12px 20px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    /* Hero section එකේ තියෙන flex boxes columns වලට හැරවීම */
+    .hero-home, .sanctuary-section, .map-section {
+        flex-direction: column !important;
+        text-align: center;
+        gap: 30px !important;
+    }
+
+    /* Grid layout තනි තීරුවට හැරවීම */
+    .treatments-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Images වල size එක auto adjust කිරීම */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
